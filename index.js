@@ -4,10 +4,6 @@ const input = document.querySelector("input");
 const ol = document.querySelector(".translate");
 const targetLanguage = 'RU';
 let sourceLanguage = 'ET';
-// translateBtn.addEventListener("click", function(){
-//     console.log("HI")    
-//     addWords(input.value, "penis")
-// })
 document.addEventListener("keyup", function(event){
     if(event.code == "Enter"){
         translateText(input.value, targetLanguage, sourceLanguage)
@@ -29,7 +25,6 @@ btn.addEventListener("click", function(){
 })
 }
 
-// Запрос к DeeplL API для перевода текста
 function translateText(text, targetLanguage, sourceLanguage) {
   const apiKey = ''; // Вставьте свой ключ API DeeplL
 
@@ -43,7 +38,6 @@ function translateText(text, targetLanguage, sourceLanguage) {
 
   const url = `${endpoint}?${params}`;
 
-  // Выполнение запроса на перевод
   fetch(url)
     .then(response => response.json())
     .then(data => {
